@@ -1,0 +1,29 @@
+Fluxo Geral:
+
+1- Adicionar Tarefa
+2- Listar Tarefas
+3- Marcar tarefa como concluída
+4- Excluir Tarefa
+5- Sair do programa
+
+Ler a opção escolhida pelo usuário (input)
+
+Se o usuário escolher:
+
+1- pedir o nome da tarefa e salvar em uma lista
+2- mostrar todas as tarefas (com status: pendente/concluída)
+3- pedir o número da tarefa e marcar como concluída
+4- pedir o número da tarefa e remover da lista
+0: encerrar o programa
+
+Repetir o menu até o usuário digitar "0"
+
+Vai possuir uma lista de dicionários com o "nome": '...', "concluida": True/False 
+
+Funções que existirão:
+
+add_task()
+show_tasks()
+mark_as_completed()
+delete_task()
+main_menu()
