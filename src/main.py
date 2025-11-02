@@ -98,6 +98,7 @@ def delete_task(list_tasks: list):
     except ValueError:
         print('ERRO: Insira apenas números!')
 
+
 print('-- CARREGANDO TAREFAS --')
 list_tasks = load_tasks(CAMINHO_ARQUIVO)
 
