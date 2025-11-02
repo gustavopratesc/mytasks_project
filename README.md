@@ -1,36 +1,60 @@
-# MyTasks — Gerenciador de Tarefas em Python
+#  MyTasks — Gerenciador de Tarefas em Python
 
 **Autor:** Gustavo Prates Caetano  
-**Versão:** 1.0 (CLI - Terminal)  
+**Versão Atual:** 2.0 (CLI com Persistência em JSON)  
 **Status do Projeto:** Em desenvolvimento 🚧  
 
 ---
 
-## Sobre o Projeto
+##  Sobre o Projeto
 
-O **MyTasks** é um sistema de gerenciamento de tarefas desenvolvido em **Python**, criado com o objetivo de evoluir passo a passo — começando pelo terminal e chegando até uma **API completa com Django e FastAPI**.
+O **MyTasks** é um sistema de gerenciamento de tarefas desenvolvido em **Python**, criado com o objetivo de evoluir gradualmente — começando pelo terminal (CLI) e avançando até uma **API completa** com **Django** e **FastAPI**.  
 
-Este projeto faz parte do meu plano de estudos para me tornar um **desenvolvedor back-end Python profissional**, praticando desde os fundamentos até frameworks avançados.
+Este projeto faz parte do meu plano de estudos para me tornar um **desenvolvedor back-end Python profissional**, consolidando habilidades desde os fundamentos até frameworks avançados.
 
 ---
 
-## 🎯 Objetivo da Etapa Atual
+##  Objetivo da Etapa Atual
 
-**Etapa 1 — Versão CLI (Terminal)**  
-Nesta fase, o foco é praticar e aplicar:
-- Variáveis e tipos primitivos  
-- Estruturas condicionais (`if`, `else`)  
-- Estruturas de repetição (`for`, `while`)  
-- Funções (`def`, `return`)  
-- Listas e dicionários  
+### **Etapa 2 — Persistência em JSON**
+Nesta etapa, o foco é implementar a **salvaguarda e recuperação dos dados** das tarefas através de um arquivo `.json`, simulando a camada de persistência de um banco de dados.  
 
-### 🔹 Funcionalidades:
+**Conceitos praticados:**
+- Manipulação de arquivos  
+- Leitura e escrita com `json.load()` e `json.dump()`  
+- Tratamento de exceções (`try`, `except`)  
+- Estrutura de diretórios e boas práticas de persistência  
+- Criação automática de pastas (`os.makedirs`)  
+
+**Funcionalidades:**
 - Adicionar tarefa  
 - Listar tarefas  
 - Marcar tarefa como concluída  
 - Excluir tarefa  
+- **Salvar e carregar tarefas automaticamente** no arquivo `data/tasks.json`
 
 ---
 
-## 🧱 Estrutura de Pastas
+## Etapas do Projeto
 
+| Etapa | Versão | Descrição | Status |
+|-------|---------|------------|--------|
+| 1 | v1.0 | Versão CLI básica (terminal) com CRUD em memória | ✅ Concluída |
+| 2 | v2.0 | Persistência em arquivo JSON | ✅ Concluída |
+| 3 | v3.0 | Modularização e POO (refatoração em classes) | 🔜 Em breve |
+| 4 | v4.0 | Banco de dados (SQLite/PostgreSQL) | 🔜 Planejada |
+| 5 | v5.0 | API com Django/FastAPI | 🔜 Planejada |
+
+---
+
+## Estrutura de Pastas
+
+mytasks_project/
+│
+├── data/
+│ └── tasks.json # Armazena as tarefas salvas
+│
+├── src/
+│ └── main.py # Código principal do sistema
+│
+└── README.md # Documentação do projeto

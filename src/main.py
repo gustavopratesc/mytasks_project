@@ -1,11 +1,44 @@
+import json
 from time import sleep
+
+CAMINHO_ARQUIVO = 'data/tasks.json'
 
 list_tasks = []
 
+def load_tasks(caminho_arquivo) -> list:
+    try:
+        with open(caminho_arquivo, 'r') as arquivo:
+            data = json.load(arquivo)
+            if not data:
+                return []
+            return data
+    except FileNotFoundError:
+        print('Arquivo não encontrado, iniciando lista vazia') 
+        return []
+    except json.JSONDecodeError:
+        print('Arquivo corrompido, reniciando lista vazia')
+        return []
+
+def save_tasks(caminho_arquivo, tarefas):
+    try:
+        with open(caminho_arquivo, 'w') as arquivo:
+            json.dump(tarefas, arquivo, indent=4)
+            print('Tarefas salvas com sucesso!')
+    except FileNotFoundError:
+        import os 
+        pasta = os.path.dirname(caminho_arquivo)
+        os.makedirs(pasta, exist_ok=True)
+        print('Pasta /data não existia e foi criada. Salvando novamente...')
+        save_tasks(caminho_arquivo, tarefas)
+    except PermissionError:
+        print('O sistema não tem permissão para salvar')
+    return
+            
 def add_task() -> None:
     while True:
         name_task = input('Insira a tarefa: ').strip().capitalize()
         list_tasks.append({"name": name_task, "status": False})
+        save_tasks(CAMINHO_ARQUIVO, list_tasks)
         print(f'{name_task}: adicionada a lista!')
         print('---------------------------------')
         sleep(0.3)
@@ -39,6 +72,7 @@ def mark_as_completed(list_tasks: list) -> None:
             return
         
         list_tasks[task_index - 1]["status"] = True
+        save_tasks(CAMINHO_ARQUIVO, list_tasks)
         print(f'Tarefa "{list_tasks[task_index - 1]["name"]}" marcada como concluida!!')
 
     except ValueError:
@@ -59,9 +93,13 @@ def delete_task(list_tasks: list):
             return
         
         task_remove = list_tasks.pop(index - 1)
+        save_tasks(CAMINHO_ARQUIVO, list_tasks)
         print(f'Tarefa removida: {task_remove["name"]}')
     except ValueError:
         print('ERRO: Insira apenas números!')
+
+print('-- CARREGANDO TAREFAS --')
+list_tasks = load_tasks(CAMINHO_ARQUIVO)
 
 while True:
     print(f'''
