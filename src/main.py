@@ -116,20 +116,35 @@ while True:
         if option > 5:
             print('ERRO: Digite apenas as opções do menu')
             continue
+        match option:
+            case 1:
+                add_task()
+            case 2:
+                show_tasks(list_tasks)
+            case 3:
+                mark_as_completed(list_tasks)
+            case 4:
+                delete_task(list_tasks)
+            case 5:
+                print('Finalizando programa...')
+                sleep(0.3)
+                print('Programa finalizado!')
+                break
+            
         
-        if option == 1:
-            add_task()
-        elif option == 2:
-            show_tasks(list_tasks)
-        elif option == 3:
-            mark_as_completed(list_tasks)
-        elif option == 4:
-            delete_task(list_tasks)
-        elif option == 5:
-            print('Finalizando programa...')
-            sleep(0.3)
-            print('Programa finalizado!')
-            break
+        # if option == 1:
+        #     add_task()
+        # elif option == 2:
+        #     show_tasks(list_tasks)
+        # elif option == 3:
+        #     mark_as_completed(list_tasks)
+        # elif option == 4:
+        #     delete_task(list_tasks)
+        # elif option == 5:
+        #     print('Finalizando programa...')
+        #     sleep(0.3)
+        #     print('Programa finalizado!')
+        #     break
     except ValueError:
         print('Digite apenas números!')
         continue
