@@ -1,8 +1,8 @@
 #  MyTasks — Gerenciador de Tarefas em Python
 
 **Autor:** Gustavo Prates Caetano  
-**Versão Atual:** 2.0 (CLI com Persistência em JSON)  
-**Status do Projeto:** Em desenvolvimento 🚧  
+**Versão Atual:** 3.0 (Modularização e POO)  
+**Status do Projeto:** Em desenvolvimento   
 
 ---
 
@@ -16,8 +16,8 @@ Este projeto faz parte do meu plano de estudos para me tornar um **desenvolvedor
 
 ##  Objetivo da Etapa Atual
 
-### **Etapa 2 — Persistência em JSON**
-Nesta etapa, o foco é implementar a **salvaguarda e recuperação dos dados** das tarefas através de um arquivo `.json`, simulando a camada de persistência de um banco de dados.  
+### **Etapa 3 — Modularização e POO**
+Nesta etapa, o foco é implementar a **salvaguarda e recuperação dos dados, e tambem a utilização da Programação orientada a objetos (classes e metodos),** das tarefas através de um arquivo `.json`, simulando a camada de persistência de um banco de dados.  
 
 **Conceitos praticados:**
 - Manipulação de arquivos  
@@ -31,7 +31,7 @@ Nesta etapa, o foco é implementar a **salvaguarda e recuperação dos dados** d
 - Listar tarefas  
 - Marcar tarefa como concluída  
 - Excluir tarefa  
-- **Salvar e carregar tarefas automaticamente** no arquivo `data/tasks.json`
+- **Salvar e carregar tarefas automaticamente** no arquivo `src/data/tasks.json`
 
 ---
 
@@ -39,11 +39,11 @@ Nesta etapa, o foco é implementar a **salvaguarda e recuperação dos dados** d
 
 | Etapa | Versão | Descrição | Status |
 |-------|---------|------------|--------|
-| 1 | v1.0 | Versão CLI básica (terminal) com CRUD em memória | ✅ Concluída |
-| 2 | v2.0 | Persistência em arquivo JSON | ✅ Concluída |
-| 3 | v3.0 | Modularização e POO (refatoração em classes) | 🔜 Em breve |
-| 4 | v4.0 | Banco de dados (SQLite/PostgreSQL) | 🔜 Planejada |
-| 5 | v5.0 | API com Django/FastAPI | 🔜 Planejada |
+| 1 | v1.0 | Versão CLI básica (terminal) com CRUD em memória | Concluída |
+| 2 | v2.0 | Persistência em arquivo JSON | Concluída |
+| 3 | v3.0 | Modularização e POO (refatoração em classes) | Concluída |
+| 4 | v4.0 | Banco de dados (SQLite/PostgreSQL) | Planejada |
+| 5 | v5.0 | API com Django/FastAPI | Planejada |
 
 ---
 
@@ -56,5 +56,8 @@ mytasks_project/
 │
 ├── src/
 │ └── main.py # Código principal do sistema
+| └── data # Armazenar arquivo JSON
+| └── Models # Armazenar arquivo task.py
+| └── Service # Armazenar arquivo task_manager.py
 │
 └── README.md # Documentação do projeto
