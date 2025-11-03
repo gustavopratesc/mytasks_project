@@ -6,5 +6,9 @@
     {
         "name": "Treinar",
         "status": false
+    },
+    {
+        "name": "Estudar python",
+        "status": true
     }
 ]
